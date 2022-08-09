@@ -239,18 +239,7 @@ export class PieComponent implements OnInit {
 
 
   chart() {
-    console.log(this.series, 'series');
-
     let seriesArr: any = []
-    // let yAxesArr: any = []
-    // let xAxesArr: any = []
-
-    // let chart = {
-    //   ...this.series,
-    //   ...this.background,
-    //   ...this.cursor,
-    //   ...this.legend
-    // }
 
     this.chartData.config.series.map(_item => {
       const tmp = {
@@ -261,39 +250,13 @@ export class PieComponent implements OnInit {
       seriesArr.push(tmp)
     })
 
-    // this.chartData.config.xAxes.map(_item => {
-    //   const tmp = {
-    //     ..._item,
-    //     ...this.xAxes
-    //   }
-
-    //   xAxesArr.push(tmp)
-    // })
-
-    // this.chartData.config.yAxes.map(_item => {
-    //   const tmp = {
-    //     ..._item,
-    //     ...this.yAxes
-    //   }
-
-    //   yAxesArr.push(tmp)
-    // })
-
-
     this.finalizing = {
       ...this.styleTemplate,
-      "series": seriesArr,
-      // "xAxes": xAxesArr,
-      // "yAxes": yAxesArr,
-
+      "series": seriesArr
     }
-
-    console.log('finalize => ', this.finalizing);
 
     this.chartRender = am4core.createFromConfig(this.finalizing, this.ID_GENERATOR, am4charts.PieChart)
     this.chartRender.data = this.chartData.data;
-
-    console.log(this.chartRender, 'datas');
 
     return this.chartRender
   }

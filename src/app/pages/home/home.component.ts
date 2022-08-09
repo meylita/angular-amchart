@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
       "position": "bottom",
       "type": "Legend",
       "labels": {
-        "fill": "#fff"
+        "fill": "#000"
       }
     },
     "scrollbarX": {
@@ -148,9 +148,9 @@ export class HomeComponent implements OnInit {
           "fill": "#fff",
           "fillOpacity": 1,
           "events": {},
-          "tooltipText": "{name}: [bold]{valueY}", // not sharing tooltip
+          // "tooltipText": "{name}: [bold]{valueY}", // not sharing tooltip
         },
-        // "tooltipText": "{name}: [bold]{valueY}" // sharing tooltip
+        "tooltipText": "{name}: [bold]{valueY}" // sharing tooltip
       },
       {
         "disabled": false,
@@ -325,21 +325,24 @@ export class HomeComponent implements OnInit {
       "yAxes": yAxesArr,
       events: {
         beforedatavalidated: (ev: any) => {
-            const raw = ev.target.data;
-            const reff = ev.target.series.values[0].dataFields.category
-            const exception = ev.target.colors.list
-            // console.log(raw, reff, exception);
+          // const raw = ev.target.data;
+          const raw = ev.target.series.values
+          const exception = ev.target.colors.list
 
-            let arr: any = []
-            raw.map((val: any, i: any) => {
-                const obj = { ...val, color: REF_COLOR[val[reff]] || exception[i].hex }
-                arr.push(obj)
-            })
+          let arr = [];
+          raw.map((val: any, i: any) => {
+            // const color = REF_COLOR[val.name] || exception[i].hex
+            // const obj = { ...val, fill: color, stroke: color }
+            // arr.push(obj)
+            ev.target.series.values[i].stroke = REF_COLOR[raw[i].name] || exception[i].hex
+            ev.target.series.values[i].fill = REF_COLOR[raw[i].name] || exception[i].hex
 
-            ev.target.data = arr
-            console.log(ev.target.data = arr);
+          })
+
+          // console.log(arr);
+          // ev.target.series.values = arr;
         }
-    }
+      }
     }
 
     console.log(this.finalizing);

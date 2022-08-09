@@ -204,79 +204,7 @@ export class BarChartComponent implements OnInit {
           },
           "name": "platform",
           "type": "ColumnSeries"
-        },
-        // {
-        //   "dataFields": {
-        //     "categoryY": "platform",
-        //     "valueX": "twitter"
-        //   },
-        //   "information": {
-        //     "dataFields": {
-        //       "categoryY": [
-        //         "platform"
-        //       ],
-        //       "valueX": [
-        //         "value"
-        //       ]
-        //     }
-        //   },
-        //   "name": "twitter",
-        //   "type": "ColumnSeries"
-        // },
-        // {
-        //   "dataFields": {
-        //     "categoryY": "platform",
-        //     "valueX": "instagram"
-        //   },
-        //   "information": {
-        //     "dataFields": {
-        //       "categoryY": [
-        //         "platform"
-        //       ],
-        //       "valueX": [
-        //         "value"
-        //       ]
-        //     }
-        //   },
-        //   "name": "instagram",
-        //   "type": "ColumnSeries"
-        // },
-        // {
-        //   "dataFields": {
-        //     "categoryY": "platform",
-        //     "valueX": "youtube"
-        //   },
-        //   "information": {
-        //     "dataFields": {
-        //       "categoryY": [
-        //         "platform"
-        //       ],
-        //       "valueX": [
-        //         "value"
-        //       ]
-        //     }
-        //   },
-        //   "name": "youtube",
-        //   "type": "ColumnSeries"
-        // },
-        // {
-        //   "dataFields": {
-        //     "categoryY": "platform",
-        //     "valueX": "tiktok"
-        //   },
-        //   "information": {
-        //     "dataFields": {
-        //       "categoryY": [
-        //         "platform"
-        //       ],
-        //       "valueX": [
-        //         "value"
-        //       ]
-        //     }
-        //   },
-        //   "name": "tiktok",
-        //   "type": "ColumnSeries"
-        // },
+        }
       ],
       "xAxes": [
         {
@@ -295,60 +223,21 @@ export class BarChartComponent implements OnInit {
       ]
     },
     "data": [
-      // {
-      //   "facebook": 48196083,
-      //   "twitter": 69640297,
-      //   "instagram": 62744173,
-      //   "youtube": 39640297,
-      //   "tiktok": 52744173,
-      // }
       {
         platform: "facebook",
         value: 2025,
-        color: 'blue'
-
-        // "facebook": 48196083,
-        // "twitter": 69640297,
-        // "instagram": 62744173,
-        // "youtube": 39640297,
-        // "tiktok": 52744173,
       }, {
         platform: "twitter",
         value: 1882,
-        color: 'blue'
-
-        // "facebook": 48196083,
-        // "twitter": 69640297,
-        // "instagram": 62744173,
-        // "youtube": 39640297,
-        // "tiktok": 52744173,
       }, {
         platform: "instagram",
         value: 1809
-
-        // "facebook": 48196083,
-        // "twitter": 69640297,
-        // "instagram": 62744173,
-        // "youtube": 39640297,
-        // "tiktok": 52744173,
       }, {
         platform: "youtube",
-        value: -1322,
-
-        // "facebook": 48196083,
-        // "twitter": 69640297,
-        // "instagram": 62744173,
-        // "youtube": 39640297,
-        // "tiktok": 52744173,
+        value: 1322,
       }, {
         platform: "tiktok",
         value: 1122
-
-        // "facebook": 48196083,
-        // "twitter": 69640297,
-        // "instagram": 62744173,
-        // "youtube": 39640297,
-        // "tiktok": 52744173,
       }
     ]
   }
@@ -413,6 +302,5 @@ export class BarChartComponent implements OnInit {
 
     return this.chartRender
   }
-
 
 }
